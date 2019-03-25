@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Lab01Uandes</string>
+    <string name="login_btn">Login</string>
+    <string name="enter_pass">Enter Password</string>
+    <string name="enter_mail">Enter E-mail</string>
+</resources>
