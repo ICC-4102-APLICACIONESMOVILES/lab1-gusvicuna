@@ -18,12 +18,15 @@ class Login : AppCompatActivity() {
         val email = findViewById<EditText>(R.id.email)
 
         button.setOnClickListener {
-            if (true){
+            if (isEmailValid(email.text.toString())){
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent);
             } else {
                 Toast.makeText(this, "Please enter a valid e-mail.", Toast.LENGTH_SHORT).show()
             }
         }
+    }
+    fun isEmailValid(email: String): Boolean {
+        return android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()
     }
 }
