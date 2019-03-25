@@ -16,6 +16,6 @@ class Login : AppCompatActivity() {
         setContentView(R.layout.activity_login)
 
         val intent = intent
-        val message = intent.getStringExtra(MainActivity.EXTRA_MESSAGE)
+
     }
 }
