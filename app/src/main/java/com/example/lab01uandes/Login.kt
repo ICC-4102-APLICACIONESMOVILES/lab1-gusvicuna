@@ -4,6 +4,8 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.content.Intent
 import android.widget.Button
+import android.widget.EditText
+import android.widget.Toast
 
 
 class Login : AppCompatActivity() {
@@ -11,10 +13,17 @@ class Login : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
-    }
-    val button = findViewById<Button>(R.id.btn_login)
-    fun logIn(){
-        val intent = Intent(this, MainActivity::class.java)
-        startActivity(intent);
+
+        val button = findViewById<Button>(R.id.btn_login)
+        val email = findViewById<EditText>(R.id.email)
+
+        button.setOnClickListener {
+            if (true){
+                val intent = Intent(this, MainActivity::class.java)
+                startActivity(intent);
+            } else {
+                Toast.makeText(this, "Please enter a valid e-mail.", Toast.LENGTH_SHORT).show()
+            }
+        }
     }
 }
