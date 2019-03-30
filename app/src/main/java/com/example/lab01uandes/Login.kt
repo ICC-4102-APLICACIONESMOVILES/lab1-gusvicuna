@@ -1,5 +1,6 @@
 package com.example.lab01uandes
 
+import android.app.Activity
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.content.Intent
@@ -20,7 +21,9 @@ class Login : AppCompatActivity() {
         button.setOnClickListener {
             if (isEmailValid(email.text.toString())){
                 val intent = Intent(this, MainActivity::class.java)
-                startActivity(intent);
+                intent.putExtra("result",email.text.toString());
+                setResult(Activity.RESULT_OK,intent);
+                finish()
             } else {
                 Toast.makeText(this, "Please enter a valid e-mail.", Toast.LENGTH_SHORT).show()
             }
